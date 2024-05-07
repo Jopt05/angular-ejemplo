@@ -1,0 +1,21 @@
+<h3>Add product</h3>
+
+<form [formGroup]="myForm" (ngSubmit)="addProduct()">
+  <label for="name">Name</label>
+  <input formControlName="name" type="text" />
+  <span *ngIf="isInvalidField('name')">El campo es requerido</span>
+
+  <label for="description">Description</label>
+  <input formControlName="description" type="text" />
+  <span *ngIf="isInvalidField('description')">El campo es requerido</span>
+
+  <label for="price">Price</label>
+  <input formControlName="price" type="text" />
+  <span *ngIf="isInvalidField('price')">El campo es requerido</span>
+
+  <button type="submit">Guardar</button>
+
+  <p>
+    {{ myForm.value | json }}
+  </p>
+</form>

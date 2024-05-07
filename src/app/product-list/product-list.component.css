@@ -1,0 +1,18 @@
+h3 {
+  line-height: 5px;
+}
+
+.productItem {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  width: max-content;
+}
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/

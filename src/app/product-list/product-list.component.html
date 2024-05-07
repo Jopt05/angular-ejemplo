@@ -1,0 +1,29 @@
+<h2>Products</h2>
+
+<div class="productItem" *ngFor="let product of products">
+  <h3>
+    <a
+      [title]="product.name + ' details'"
+      [routerLink]="['/products', product.id]"
+    >
+      {{ product.name }}
+    </a>
+  </h3>
+
+  <p *ngIf="product.description">Description: {{ product.description }}</p>
+
+  <button type="button" (click)="share()">Share</button>
+
+  <app-product-alerts
+    [product]="product"
+    (notifyFunc)="onNotify($event)"
+  ></app-product-alerts>
+</div>
+
+<app-form-add (onNewProduct)="addProduct($event)"> </app-form-add>
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->
